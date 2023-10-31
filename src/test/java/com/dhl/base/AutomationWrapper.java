@@ -24,6 +24,4 @@ public class AutomationWrapper {
 	public void teardown() {
 		driver.quit();
 	}
-	
-
 }
