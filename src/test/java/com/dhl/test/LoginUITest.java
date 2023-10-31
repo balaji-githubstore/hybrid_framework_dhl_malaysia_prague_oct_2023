@@ -1,6 +1,5 @@
 package com.dhl.test;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,8 +15,9 @@ public class LoginUITest extends AutomationWrapper  {
 
 	@Test
 	public void placeholderTest() {
-		Assert.assertEquals(LoginPage.getUsernamePlaceholder(driver), "Username");
-		Assert.assertEquals(LoginPage.getPasswordPlaceholder(driver), "Password");
+		LoginPage loginPage=new LoginPage(driver);
+		Assert.assertEquals(loginPage.getUsernamePlaceholder(), "Username");
+		Assert.assertEquals(loginPage.getPasswordPlaceholder(), "Password");
 	}
 
 }

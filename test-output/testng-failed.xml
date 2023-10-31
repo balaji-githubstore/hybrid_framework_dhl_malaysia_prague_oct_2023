@@ -5,7 +5,7 @@
     <classes>
       <class name="com.dhl.test.LoginTest">
         <methods>
-          <include name="validLoginTest"/>
+          <include name="invalidLoginTest"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>

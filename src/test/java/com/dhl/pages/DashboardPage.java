@@ -5,9 +5,17 @@ import org.openqa.selenium.WebDriver;
 
 public class DashboardPage {
 	
-	public static String getDashboardHeader(WebDriver driver)
+	private WebDriver driver;
+	
+	public DashboardPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public String getDashboardHeader()
 	{
 		return driver.findElement(By.xpath("//h6[contains(normalize-space(),'Dash')]")).getText();
 	}
 
+	
 }

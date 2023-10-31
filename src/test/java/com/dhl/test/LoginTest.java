@@ -1,36 +1,37 @@
 package com.dhl.test;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.dhl.base.AutomationWrapper;
 import com.dhl.pages.DashboardPage;
 import com.dhl.pages.LoginPage;
+import com.dhl.utils.DataUtils;
 
-public class LoginTest extends AutomationWrapper{
+public class LoginTest extends AutomationWrapper {
 	@Test
-	public void validLoginTest()
-	{
-		LoginPage.enterUsername(driver, "Admin");
-		LoginPage.enterPassword(driver, "admin123");
-		LoginPage.clickOnLogin(driver);
-		
-		String actualHeader= DashboardPage.getDashboardHeader(driver);
+	public void validLoginTest() {
+		LoginPage loginPage = new LoginPage(driver);
+
+		loginPage.enterUsername("Admin");
+		loginPage.enterPassword("admin123");
+		loginPage.clickOnLogin();
+
+		DashboardPage dashboardPage = new DashboardPage(driver);
+		String actualHeader = dashboardPage.getDashboardHeader();
 		Assert.assertEquals(actualHeader, "Dashboard");
 	}
-	
-	@Test
-	public void invalidLoginTest()
-	{
-		LoginPage.enterUsername(driver, "john");
-		LoginPage.enterPassword(driver, "john123");
-		LoginPage.clickOnLogin(driver);
-		
-		//Assert the error - Invalid credentials
-		String actualError=LoginPage.getInvalidErrorMessage(driver);
-		Assert.assertTrue(actualError.contains("Invalid credentials"));  //except true
-	}
-	
 
+	@Test(dataProvider = "invalidLoginData", dataProviderClass = DataUtils.class)
+	public void invalidLoginTest(String username, String password, String expectedError) {
+		LoginPage loginPage = new LoginPage(driver);
+
+		loginPage.enterUsername(username);
+		loginPage.enterPassword(password);
+		loginPage.clickOnLogin();
+
+		// Assert the error - Invalid credentials
+		String actualError = loginPage.getInvalidErrorMessage();
+		Assert.assertTrue(actualError.contains(expectedError)); // except true
+	}
 }
