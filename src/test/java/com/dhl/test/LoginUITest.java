@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.dhl.base.AutomationWrapper;
+import com.dhl.pages.LoginPage;
 
 public class LoginUITest extends AutomationWrapper  {
 	@Test
@@ -15,11 +16,8 @@ public class LoginUITest extends AutomationWrapper  {
 
 	@Test
 	public void placeholderTest() {
-		String actualUsernamePlaceholder = driver.findElement(By.name("username")).getAttribute("placeholder");
-		String actualPasswordPlaceholder = driver.findElement(By.name("password")).getAttribute("placeholder");
-
-		Assert.assertEquals(actualUsernamePlaceholder, "Username");
-		Assert.assertEquals(actualPasswordPlaceholder, "Password");
+		Assert.assertEquals(LoginPage.getUsernamePlaceholder(driver), "Username");
+		Assert.assertEquals(LoginPage.getPasswordPlaceholder(driver), "Password");
 	}
 
 }

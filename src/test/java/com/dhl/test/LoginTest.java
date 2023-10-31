@@ -5,28 +5,30 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.dhl.base.AutomationWrapper;
+import com.dhl.pages.DashboardPage;
+import com.dhl.pages.LoginPage;
 
 public class LoginTest extends AutomationWrapper{
 	@Test
 	public void validLoginTest()
 	{
-		driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
-		driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+		LoginPage.enterUsername(driver, "Admin");
+		LoginPage.enterPassword(driver, "admin123");
+		LoginPage.clickOnLogin(driver);
 		
-		String actualHeader= driver.findElement(By.xpath("//h6[contains(normalize-space(),'Dash')]")).getText();
+		String actualHeader= DashboardPage.getDashboardHeader(driver);
 		Assert.assertEquals(actualHeader, "Dashboard");
 	}
 	
 	@Test
 	public void invalidLoginTest()
 	{
-		driver.findElement(By.name("username")).sendKeys("john");
-		driver.findElement(By.name("password")).sendKeys("john123");
-		driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+		LoginPage.enterUsername(driver, "john");
+		LoginPage.enterPassword(driver, "john123");
+		LoginPage.clickOnLogin(driver);
 		
 		//Assert the error - Invalid credentials
-		String actualError=driver.findElement(By.xpath("//p[contains(normalize-space(),'Invalid')]")).getText();
+		String actualError=LoginPage.getInvalidErrorMessage(driver);
 		Assert.assertTrue(actualError.contains("Invalid credentials"));  //except true
 	}
 	
