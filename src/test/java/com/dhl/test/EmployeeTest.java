@@ -25,6 +25,7 @@ public class EmployeeTest extends AutomationWrapper {
 		
 		//Add under AddEmployeePage
 		//enter firstname,middlename,lastname
+		//upload some image
 		//click on save
 		
 		//PersonalDetailsPage
