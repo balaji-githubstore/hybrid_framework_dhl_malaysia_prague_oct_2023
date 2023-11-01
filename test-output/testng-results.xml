@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-01T06:57:43 GMT" name="Default suite" finished-at="2023-11-01T06:58:57 GMT" duration-ms="74223">
+  <suite started-at="2023-11-01T08:39:15 GMT" name="Default suite" finished-at="2023-11-01T08:40:53 GMT" duration-ms="97473">
     <groups>
     </groups>
-    <test started-at="2023-11-01T06:57:43 GMT" name="Default test" finished-at="2023-11-01T06:58:57 GMT" duration-ms="74223">
+    <test started-at="2023-11-01T08:39:15 GMT" name="Default test" finished-at="2023-11-01T08:40:53 GMT" duration-ms="97473">
       <class name="com.dhl.test.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.dhl.test.LoginTest@29215f06]" started-at="2023-11-01T06:58:41 GMT" name="setup" finished-at="2023-11-01T06:58:47 GMT" duration-ms="5452" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.dhl.test.LoginTest@29215f06]" started-at="2023-11-01T08:39:16 GMT" name="setup" finished-at="2023-11-01T08:39:23 GMT" duration-ms="6469" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.dhl.test.LoginTest@29215f06]" started-at="2023-11-01T06:58:47 GMT" name="validLoginTest" data-provider="commonDataProvider" finished-at="2023-11-01T06:58:55 GMT" duration-ms="8309" status="PASS">
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.dhl.test.LoginTest@29215f06]" started-at="2023-11-01T08:39:23 GMT" name="validLoginTest" data-provider="commonDataProvider" finished-at="2023-11-01T08:40:50 GMT" duration-ms="87717" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,7 +32,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.dhl.test.LoginTest@29215f06]" started-at="2023-11-01T06:58:55 GMT" name="teardown" finished-at="2023-11-01T06:58:57 GMT" duration-ms="1748" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.dhl.test.LoginTest@29215f06]" started-at="2023-11-01T08:40:50 GMT" name="teardown" finished-at="2023-11-01T08:40:53 GMT" duration-ms="2372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

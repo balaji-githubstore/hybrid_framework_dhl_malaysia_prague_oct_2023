@@ -7,9 +7,11 @@ public class WebDriverKeywords {
 
 	private WebDriver driver;
 
-	public WebDriverKeywords(WebDriver driver) {
+	public WebDriverKeywords(WebDriver driver) 
+	{
 		this.driver = driver;
 	}
+	
 
 	public void clickOnElement(By locator) {
 		driver.findElement(locator).click();
@@ -17,6 +19,16 @@ public class WebDriverKeywords {
 
 	public void typeOnElement(By locator, String text) {
 		driver.findElement(locator).sendKeys(text);
+	}
+	
+	public String getTextFromElement(By locator)
+	{
+		return driver.findElement(locator).getText();
+	}
+	
+	public String getAttributeValue(By locator, String attributeName) 
+	{
+		return driver.findElement(locator).getAttribute(attributeName);
 	}
 
 }
