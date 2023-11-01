@@ -7,13 +7,13 @@ import com.dhl.base.AutomationWrapper;
 import com.dhl.pages.LoginPage;
 
 public class LoginUITest extends AutomationWrapper  {
-	@Test
+	@Test(groups = {"ui","smoke"})
 	public void titleTest() {
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, "OrangeHRM");
 	}
 
-	@Test
+	@Test(groups = {"ui"} )
 	public void placeholderTest() {
 		LoginPage loginPage=new LoginPage(driver);
 		Assert.assertEquals(loginPage.getUsernamePlaceholder(), "Username");

@@ -1,17 +1,15 @@
 package com.dhl.test;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.dhl.base.AutomationWrapper;
-import com.dhl.base.WebDriverKeywords;
 import com.dhl.pages.DashboardPage;
 import com.dhl.pages.LoginPage;
 import com.dhl.utils.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
-	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class,groups = {"login","smoke"})
 	public void validLoginTest(String username,String password,String expectedHeader) {
 		LoginPage loginPage = new LoginPage(driver);
 
@@ -24,7 +22,7 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(actualHeader, expectedHeader);
 	}
 
-	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class,groups = {"login"})
 	public void invalidLoginTest(String username, String password, String expectedError) {
 		LoginPage loginPage = new LoginPage(driver);
 
