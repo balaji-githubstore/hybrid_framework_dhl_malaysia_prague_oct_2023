@@ -5,8 +5,10 @@
     <classes>
       <class name="com.dhl.test.LoginUITest">
         <methods>
+          <include name="init"/>
           <include name="teardown"/>
           <include name="titleTest"/>
+          <include name="end"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.dhl.test.LoginUITest -->
