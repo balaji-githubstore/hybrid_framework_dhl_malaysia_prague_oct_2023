@@ -12,7 +12,10 @@ public class ZDemo3ExtentReport {
 		//@BeforeSuite
 		//report initialization - should run once in the beginning
 		ExtentReports extent = new ExtentReports();
+		
+		
 		ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
+		
 		extent.attachReporter(spark);
 		
 		//before the @Test method - @BeforeMethod
