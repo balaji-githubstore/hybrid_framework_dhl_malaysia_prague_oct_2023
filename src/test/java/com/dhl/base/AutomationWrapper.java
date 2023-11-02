@@ -16,8 +16,8 @@ public class AutomationWrapper {
 	protected WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
-	@Parameters({ "browser" })
-	public void setup(@Optional("ch") String browserName) {
+	@Parameters({ "browser","url" })
+	public void setup(@Optional("ch") String browserName,String url) {
 
 		if (browserName.equalsIgnoreCase("edge")) {
 			driver = new EdgeDriver();
