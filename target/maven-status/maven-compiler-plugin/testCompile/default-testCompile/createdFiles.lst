@@ -1,0 +1,17 @@
+com\dhl\test\ZDemo5Fluent2.class
+com\dhl\utils\ExcelUtils.class
+com\dhl\base\AutomationWrapper.class
+com\dhl\test\ZDemo3ExtentReport.class
+com\dhl\pages\DashboardPage.class
+com\dhl\utils\DataUtils.class
+com\dhl\test\ZDemo2.class
+com\dhl\pages\LoginPage.class
+com\dhl\test\LoginUITest.class
+com\dhl\test\EmployeeTest.class
+com\dhl\base\WebDriverKeywords.class
+com\dhl\pages\ResetPasswordPage.class
+com\dhl\test\ZDemo1Test.class
+com\dhl\pages\MainPage.class
+com\dhl\test\LoginTest.class
+com\dhl\test\ZDemo4Fluent.class
+com\dhl\test\ZDemo5FB.class
